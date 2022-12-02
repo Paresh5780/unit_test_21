@@ -115,8 +115,9 @@ let getProductById = async (req, res, next) => {
       id: id,
     },
   });
-  res.writeHead(200, { "Content-Type": "application/json" });
-  res.write(JSON.stringify(products));
+  // res.writeHead(200, { "Content-Type": "application/json" });
+  res.status(201).send("get product by ID");
+  // res.write(JSON.stringify(products));
   res.end();
 };
 

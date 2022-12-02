@@ -19,3 +19,9 @@ module.exports = {
     return res;
   },
 };
+
+//"start": "node server",
+//   "migrate": "npx sequelize-cli db:migrate",
+//   "migrate:reset": "npx sequelize-cli db:migrate:undo:all & npm run migrate",
+//   "test": "cross-env NODE_ENV=test jest --testTimeout=10000 --coverage",
+//   "pretest": "cross-env NODE_ENV=test npm run migrate:reset"

@@ -20,4 +20,16 @@ describe("Product routes", () => {
 
     expect(res.statusCode).toEqual(201);
   });
+
+  it("should get products By ID", async () => {
+    const res = await request(app)
+      .get(api_v1_endpoint + "/2")
+      .send({
+        name: "JBL Speaker",
+        price: 5000,
+        categoryId: 2,
+      });
+
+    expect(res.statusCode).toEqual(201);
+  });
 });

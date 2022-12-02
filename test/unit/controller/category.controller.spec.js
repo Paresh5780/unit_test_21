@@ -71,4 +71,31 @@ describe("Category Controller", () => {
     expect(res.status).toHaveBeenCalledWith(201);
     expect(res.send).toHaveBeenCalledWith("New category added");
   });
+
+  it("should test the deleteCategory method", async () => {
+    const spy = jest.spyOn(db.category, "destroy").mockImplementation(() => {
+      return new Promise((resolve, reject) => {
+        resolve("category deleted");
+      });
+    });
+    req.params.categoryId = 1;
+    await categoryController.deleteCategoryById(req, res);
+
+    expect(spy).toHaveBeenCalled();
+    expect(res.status).toHaveBeenCalledWith(200);
+  });
+
+  it("should test the updateCategory method", async () => {
+    const spy = jest.spyOn(db.category, "update").mockImplementation(() => {
+      return new Promise((resolve, reject) => {
+        resolve(singleCategory);
+      });
+    });
+    req.params.categoryId = 1;
+    await categoryController.updateCategoryById(req, res);
+
+    expect(spy).toHaveBeenCalled();
+    expect(res.status).toHaveBeenCalledWith(200);
+    expect(res.send).toHaveBeenCalledWith(singleCategory);
+  });
 });
