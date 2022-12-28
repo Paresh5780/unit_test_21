@@ -17,7 +17,6 @@ describe("Product routes", () => {
       price: 5000,
       categoryId: 2,
     });
-
     expect(res.statusCode).toEqual(201);
   });
 
@@ -29,7 +28,7 @@ describe("Product routes", () => {
         price: 5000,
         categoryId: 2,
       });
-
-    expect(res.statusCode).toEqual(201);
+    // Token Not Passed
+    expect(res.statusCode).toEqual(401);
   });
 });

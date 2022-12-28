@@ -38,6 +38,7 @@ let insertProducts = async (req, res, next) => {
   res.status(201).json({
     message: "Products added",
   });
+  console.log("Products Added");
 };
 
 let create = async (req, res, next) => {
@@ -115,10 +116,7 @@ let getProductById = async (req, res, next) => {
       id: id,
     },
   });
-  // res.writeHead(200, { "Content-Type": "application/json" });
-  res.status(201).send("get product by ID");
-  // res.write(JSON.stringify(products));
-  res.end();
+  res.status(200).json(products);
 };
 
 module.exports = { getAllProducts, getProductById, insertProducts, create };

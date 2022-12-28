@@ -27,6 +27,7 @@ let insertCategories = async () => {
     { name: "Electronics" },
     { name: "Appliances" },
   ]);
+  console.log("Categories Added");
 };
 
 let insertRoles = async () => {

@@ -4,7 +4,11 @@ let productController = require("./../controller/product.controller");
 let authJwt = require("./../middlewares/authJwt");
 
 productRouter.get("/", [authJwt.VerifyToken], productController.getAllProducts);
-productRouter.get("/:productId", productController.getProductById);
+productRouter.get(
+  "/:productId",
+  [authJwt.VerifyToken],
+  productController.getProductById
+);
 
 productRouter.post("/", productController.insertProducts);
 

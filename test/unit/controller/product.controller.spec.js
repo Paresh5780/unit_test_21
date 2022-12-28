@@ -70,6 +70,6 @@ describe("product_controller", () => {
     await productController.getProductById(req, res);
 
     expect(spy).toHaveBeenCalled();
-    expect(res.status).toHaveBeenCalledWith(201);
+    expect(res.status).toHaveBeenCalledWith(200);
   });
 });
